@@ -8,6 +8,9 @@ import os
 
 TITLE = "Professional Mourner for Strangers' Goldfish"
 
+# The gate accepts 1-60 chars; fail loudly instead of shipping an invalid entry.
+assert 1 <= len(TITLE) <= 60, f"title is {len(TITLE)} chars, gate needs 1-60"
+
 
 def main() -> None:
     out_dir = os.environ.get("OUTPUT_DIR", "/output")
